@@ -14,10 +14,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     // Database Name
     private static final String DATABASE_NAME = "contactsManager";
-
     // Contacts table name
     private static final String TABLE_CONTACTS = "contacts";
-
     // Contacts Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
@@ -42,11 +40,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public void addContact(String name, String phone) {
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, name); // Contact Name
         values.put(KEY_PH_NO, phone); // Contact Phone Number
-
         // Inserting Row
         db.insert(TABLE_CONTACTS, null, values);
         db.close(); // Closing database connection
